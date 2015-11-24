@@ -150,6 +150,7 @@
     <Compile Include="Models\Thread.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\AddBoardModel.cs" />
+    <Compile Include="ViewModel\AddThreadModel.cs" />
     <Compile Include="ViewModel\ShowBoardsModel.cs" />
     <Compile Include="ViewModel\ShowThreadsModel.cs" />
   </ItemGroup>
@@ -190,11 +191,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Board\ShowBoards.cshtml" />
     <Content Include="Views\Board\ShowBoards11.cshtml" />
+    <Content Include="Views\Thread\ShowThreads.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Post\" />
-    <Folder Include="Views\Thread\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -1,0 +1,61 @@
+﻿@using MvcBoard_v2.Models
+@model MvcBoard_v2.Models.Board
+
+@{
+    ViewBag.Title = "ShowBoards";
+}
+
+<h2>ShowBoards</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Board</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+@*<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@using (Html.BeginForm("Create", "Board", FormMethod.Post))
+{
+    <div>
+        <h3>Reply:</h3>
+        <input type="hidden" value="@Model.ThreadId" name="ThreadId" />
+        <p>
+            Email: <input type="text" name="Email" id="Email">Title: <input type="text" name="Title" id="Title"><input type="submit" value="Send">
+        </p>
+        <p>
+            <textarea name="Content" id="txtAreaContent" rows="8" cols="50"></textarea>
+        </p>
+        <p>
+            <input type="file" name="image" id="pic"> <input type="button" value="Upload" id="btnUpload">
+        </p>
+        <input type="hidden" value="" id="imgsrc" name="imgsrc">
+        @{ MvcCaptcha sampleCaptcha = new MvcCaptcha("SampleCaptcha"); }
+        @Html.Captcha(sampleCaptcha)
+        <p>Captcha is requiered: @Html.TextBox("CaptchaCode")</p>
+    </div>
+            }
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@

@@ -1,0 +1,34 @@
+﻿@model MvcBoard_v2.ViewModel.ShowBoardsModel
+
+@{
+    ViewBag.Title = "ShowBoards";
+}
+
+<h2>ShowBoard</h2>
+@using (Html.BeginForm("Create","Board",FormMethod.Post))
+{
+    <input type="text" name="Name"/>
+    <input type="submit" name="submit"/>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Boards.FirstOrDefault().Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Boards) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem=>item.id)
+            
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+           
+          </td>
+    </tr>
+}
+
+</table>
